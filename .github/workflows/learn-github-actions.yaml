@@ -6,9 +6,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - uses: actions/setup-node@v3
-              with: 
-                node-version: '14'
-            - run: npm install -g bats
-            - run: bats -v
-            - run: ls
+            - uses: actions/setup-python@v4
+              with:
+                python-version: '3.9'
+                cache: 'pip'
+            - run: pip install odfpy pyhtml2pdf
+            - run: odf2xhtml odt/prova.odt > html/prova.html
+            - run: python scripts/convert.py
