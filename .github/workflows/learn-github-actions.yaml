@@ -11,7 +11,7 @@ jobs:
                 python-version: '3.9'
                 cache: 'pip'
             - run: pip install odfpy pyhtml2pdf
-            - run: touch html/prova.html
+            - run: pwd
             - run: odf2xhtml odt/prova.odt | tee html/prova.html
             - run: python scripts/convert.py
             - uses: stefanzweifel/git-auto-commit-action@v5
