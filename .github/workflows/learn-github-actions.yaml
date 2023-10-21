@@ -14,9 +14,8 @@ jobs:
             - run: mkdir -p html
             - run: mkdir -p pdf
             - run: odf2xhtml odt/prova.odt | tee html/prova.html
-            - uses: fifsky/html-to-pdf-action@master
+            - uses: markwilson/html2pdf@v1.0
               with:
-                htmlFile: ./html/prova.html
-                outputFile: ./pdf/prova.pdf
-                pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
+                htmlPath: ./html/prova.html
+                pdfName: ./pdf/prova.pdf
             - uses: stefanzweifel/git-auto-commit-action@v5
