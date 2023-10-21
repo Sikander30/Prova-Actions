@@ -12,6 +12,7 @@ jobs:
                 cache: 'pip'
             - run: pip install odfpy pyhtml2pdf
             - run: pwd
+            - run: ls
             - run: odf2xhtml odt/prova.odt | tee html/prova.html
             - run: python scripts/convert.py
             - uses: stefanzweifel/git-auto-commit-action@v5
