@@ -16,7 +16,7 @@ jobs:
             - run: odf2xhtml odt/prova.odt | tee html/prova.html
             - uses: fifsky/html-to-pdf-action@master
               with:
-                htmlFile: html/prova.html
-                outputFile: pdf/prova.pdf
+                htmlFile: ./html/prova.html
+                outputFile: ./pdf/prova.pdf
                 pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
             - uses: stefanzweifel/git-auto-commit-action@v5
