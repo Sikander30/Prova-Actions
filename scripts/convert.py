@@ -1,3 +1,5 @@
+import os
 from pyhtml2pdf import converter
 
-converter.convert('../html/prova.html', '../pdf/prova.pdf')
+path = path = os.path.abspath('../html/prova.html')
+converter.convert(f'file:///{path}', '../pdf/prova.pdf')
